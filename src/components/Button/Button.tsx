@@ -1,6 +1,6 @@
 import cn from 'classnames';
 import React from 'react';
-import './styles.scss';
+import styles from './styles.module.scss';
 
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   /** Состояние загрузки */
@@ -16,7 +16,8 @@ const Button: React.FC<ButtonProps> = ({ loading, children, onClick, disabled, c
         className,
         'btn',
         loading && 'btn-loading',
-        disabled && 'btn-disabled'
+        disabled && 'btn-disabled',
+        styles.btn
       )}
       onClick={(e) => onClick?.(e)}
       disabled={disabled || loading}

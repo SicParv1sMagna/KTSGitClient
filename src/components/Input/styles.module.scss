@@ -1,6 +1,6 @@
-@import "../constants.scss";
+@import "../constants.module.scss";
 
-input {
+.input {
   font-size: 16px;
   display: flex;
   width: 100%;
