@@ -1,0 +1,98 @@
+@import "../constants.module.scss";
+
+.card {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $space-xl;
+  border-radius: $border-radius;
+  background: $card-bg;
+  width: 100%;
+  height: 560px;
+
+  &:hover {
+    /* shadow */
+    box-shadow: 0px 6px 10px 0px rgba(0, 0, 0, 0.25);
+    transition: 300ms;
+  }
+
+  img {
+    border-radius: $border-radius;
+    background: #d9d9d9;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.content {
+  display: flex;
+  padding: 0px $space-xs;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $space-l;
+  width: 100%;
+}
+
+.caption {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  flex: 1 0 0;
+  overflow: hidden;
+  color: $text-secondary;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px; /* 128.571% */
+  padding-bottom: 8px;
+}
+
+.card-title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  flex: 1 0 0;
+  overflow: hidden;
+  color: $text-primary;
+  text-overflow: ellipsis;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 120% */
+  padding: 0 0 8px 0;
+}
+
+.card-subtitle {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  flex: 1 0 0;
+  overflow: hidden;
+  color: $text-secondary;
+  text-overflow: ellipsis;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 125% */
+}
+
+.action-content {
+  color: $text-primary;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22px; /* 122.222% */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1 0 0;
+}
+
+.action {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: $space-xxs;
+  align-self: stretch;
+}
