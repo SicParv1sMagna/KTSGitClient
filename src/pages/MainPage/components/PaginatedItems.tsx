@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { Props } from "./types";
 import ReactPaginate from "react-paginate";
 import ArrowRightIcon from "../../../icons/ArrowRight";
@@ -8,7 +8,7 @@ import styles from './styles.module.scss';
 
 const PaginatedItems: React.FC<Props> = ({ itemsPerPage, children, condition, repos }) => {
     const [offset, setOffset] = useState(0);
-    console.log(repos, children);
+
     children = children.filter((child) => {
         //@ts-ignore
         return child && condition(repos[(child as Record<string, object>).key].topics);
@@ -17,10 +17,10 @@ const PaginatedItems: React.FC<Props> = ({ itemsPerPage, children, condition, re
     const currentItems = children.slice(offset, offset + itemsPerPage);
     const pageAmount = Math.ceil(children.length / itemsPerPage);
 
-    const handleItemClick = (event: { selected: number }) => {
+    const handleItemClick = useCallback((event: { selected: number }) => {
         const newOffset = (event.selected * itemsPerPage) % children.length;
         setOffset(newOffset);
-    }
+    }, [offset])
 
     return (
         <>

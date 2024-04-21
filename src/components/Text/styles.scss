@@ -1,4 +1,4 @@
-@import '../constants.css';
+@import '../constants.scss';
 
 .title {
   font-family: Roboto;
@@ -15,7 +15,7 @@
 }
 
 .p-20 {
-  color: var(--text-primary, #000);
+  color: $text-primary;
   font-family: Roboto;
   font-size: 20px;
   font-style: normal;
@@ -24,7 +24,7 @@
 }
 
 .p-18 {
-  color: var(--text-primary, #000);
+  color: $text-primary;
   font-family: Roboto;
   font-size: 18px;
   font-style: normal;
@@ -33,7 +33,7 @@
 }
 
 .p-16 {
-  color: var(--text-primary, #000);
+  color: $text-primary;
   font-family: Roboto;
   font-size: 16px;
   font-style: normal;
@@ -42,7 +42,7 @@
 }
 
 .p-14 {
-  color: var(--text-primary, #000);
+  color: $text-primary;
   font-family: Roboto;
   font-size: 14px;
   font-style: normal;
@@ -56,9 +56,9 @@
   display: -moz-box;
   -moz-box-orient: vertical;
   display: -webkit-box;
-  -webkit-line-clamp: var(--maxline-count);
+  -webkit-line-clamp: $maxline-count;
   -webkit-box-orient: vertical;
-  line-clamp: var(--maxline-count);
+  line-clamp: $maxline-count;
   box-orient: vertical;
 }
 
@@ -71,13 +71,13 @@
 }
 
 .primary {
-  color: var(--text-primary);
+  color: $text-primary;
 }
 
 .secondary {
-  color: var(--text-secondary);
+  color: $text-secondary;
 }
 
 .accent {
-  color: var(--text-accent);
+  color: $text-accent;
 }

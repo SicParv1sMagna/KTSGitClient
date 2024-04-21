@@ -38,7 +38,9 @@ const MainPage: React.FC<Props> = ({
         }
     }, [organization]);
 
-    if (repos.length !== 0) localStorage.setItem('repos', JSON.stringify(repos));
+    useEffect(() => {
+        if (repos.length !== 0) localStorage.setItem('repos', JSON.stringify(repos));
+    }, [repos]);
 
     const topicTarget = (target?: string[]) => {
         if (!target || !topic) return true;

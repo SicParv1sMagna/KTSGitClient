@@ -38,4 +38,4 @@ const Text: React.FC<TextProps> = ({ tag: Tag = 'p', ...props }) => {
   return <Tag className={className}>{props.children}</Tag>;
 };
 
-export default Text;
+export default React.memo(Text);

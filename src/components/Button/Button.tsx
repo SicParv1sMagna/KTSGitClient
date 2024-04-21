@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import cn from 'classnames';
 import React from 'react';
 import './styles.scss';
 
@@ -9,17 +9,15 @@ export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   children: React.ReactNode;
 };
 
-const Button: React.FC<ButtonProps> = (props) => {
-  let { loading, children, onClick, disabled, className, ...other } = props;
-
-  var btnClass = classNames({
-    'btn-loading': loading,
-    'btn-disabled': disabled,
-  });
-
+const Button: React.FC<ButtonProps> = ({ loading, children, onClick, disabled, className, ...other }) => {
   return (
     <button
-      className={`${btnClass} ${className}`}
+      className={cn(
+        className,
+        'btn',
+        loading && 'btn-loading',
+        disabled && 'btn-disabled'
+      )}
       onClick={(e) => onClick?.(e)}
       disabled={disabled || loading}
       {...other}
@@ -29,4 +27,4 @@ const Button: React.FC<ButtonProps> = (props) => {
   );
 };
 
-export default Button;
+export default React.memo(Button);

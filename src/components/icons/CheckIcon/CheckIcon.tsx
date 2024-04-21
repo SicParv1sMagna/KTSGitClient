@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Icon, { IconProps } from '../Icon';
-import './styles.css';
+import './styles.scss';
 
 const CheckIcon: React.FC<IconProps> = (props) => {
   let { color, ...other } = props;
@@ -23,4 +23,4 @@ const CheckIcon: React.FC<IconProps> = (props) => {
   );
 };
 
-export default CheckIcon;
+export default React.memo(CheckIcon);
