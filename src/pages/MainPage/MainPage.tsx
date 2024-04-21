@@ -57,9 +57,6 @@ const MainPage: React.FC<Props> = ({
             <Text view="title" className={styles.title}>
                 List organization repositories
             </Text>
-            <Text view="p-20" className={styles.subtitle}>
-                Lists organizations repositories
-            </Text>
 
             <div className={styles.topicInput}>
                 <Input value={topic} onChange={setTopic} placeholder="Enter topic" />
